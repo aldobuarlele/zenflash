@@ -30,6 +30,16 @@ public final class Zenflash {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_zenflash_Token_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_ReviewRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_ReviewRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_ReviewResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_ReviewResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -44,10 +54,14 @@ public final class Zenflash {
       "\006tokens\030\001 \003(\0132\017.zenflash.Token\022\021\n\tsentim" +
       "ent\030\002 \001(\t\"T\n\005Token\022\017\n\007surface\030\001 \001(\t\022\017\n\007r" +
       "eading\030\002 \001(\t\022\021\n\tbase_form\030\003 \001(\t\022\026\n\016part_" +
-      "of_speech\030\004 \001(\t2T\n\nNlpService\022F\n\017Analyze" +
-      "Sentence\022\030.zenflash.AnalyzeRequest\032\031.zen" +
-      "flash.AnalyzeResponseB\025\n\021com.zenflash.gr" +
-      "pcP\001b\006proto3"
+      "of_speech\030\004 \001(\t\"7\n\rReviewRequest\022\017\n\007card" +
+      "_id\030\001 \001(\t\022\025\n\rquality_score\030\002 \001(\005\";\n\016Revi" +
+      "ewResponse\022\030\n\020next_review_date\030\001 \001(\t\022\017\n\007" +
+      "message\030\002 \001(\t2\227\001\n\nNlpService\022F\n\017AnalyzeS" +
+      "entence\022\030.zenflash.AnalyzeRequest\032\031.zenf" +
+      "lash.AnalyzeResponse\022A\n\014SubmitReview\022\027.z" +
+      "enflash.ReviewRequest\032\030.zenflash.ReviewR" +
+      "esponseB\025\n\021com.zenflash.grpcP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -71,6 +85,18 @@ public final class Zenflash {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenflash_Token_descriptor,
         new java.lang.String[] { "Surface", "Reading", "BaseForm", "PartOfSpeech", });
+    internal_static_zenflash_ReviewRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_zenflash_ReviewRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_ReviewRequest_descriptor,
+        new java.lang.String[] { "CardId", "QualityScore", });
+    internal_static_zenflash_ReviewResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_zenflash_ReviewResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_ReviewResponse_descriptor,
+        new java.lang.String[] { "NextReviewDate", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
