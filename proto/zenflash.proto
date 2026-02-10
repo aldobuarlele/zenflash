@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package zenflash;
+
+option java_multiple_files = true;
+option java_package = "com.zenflash.grpc";
+
+service NlpService {
+  rpc AnalyzeSentence (AnalyzeRequest) returns (AnalyzeResponse);
+}
+
+message AnalyzeRequest {
+  string text = 1; 
+}
+
+message AnalyzeResponse {
+  repeated Token tokens = 1;
+  string sentiment = 2;
+}
+
+message Token {
+  string surface = 1;
+  string reading = 2;
+  string base_form = 3;
+  string part_of_speech = 4;
+}
