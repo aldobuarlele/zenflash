@@ -77,6 +77,37 @@ public final class NlpServiceGrpc {
     return getSubmitReviewMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zenflash.grpc.UpdateTranslationRequest,
+      com.zenflash.grpc.UpdateTranslationResponse> getUpdateTranslationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTranslation",
+      requestType = com.zenflash.grpc.UpdateTranslationRequest.class,
+      responseType = com.zenflash.grpc.UpdateTranslationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zenflash.grpc.UpdateTranslationRequest,
+      com.zenflash.grpc.UpdateTranslationResponse> getUpdateTranslationMethod() {
+    io.grpc.MethodDescriptor<com.zenflash.grpc.UpdateTranslationRequest, com.zenflash.grpc.UpdateTranslationResponse> getUpdateTranslationMethod;
+    if ((getUpdateTranslationMethod = NlpServiceGrpc.getUpdateTranslationMethod) == null) {
+      synchronized (NlpServiceGrpc.class) {
+        if ((getUpdateTranslationMethod = NlpServiceGrpc.getUpdateTranslationMethod) == null) {
+          NlpServiceGrpc.getUpdateTranslationMethod = getUpdateTranslationMethod =
+              io.grpc.MethodDescriptor.<com.zenflash.grpc.UpdateTranslationRequest, com.zenflash.grpc.UpdateTranslationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTranslation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zenflash.grpc.UpdateTranslationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zenflash.grpc.UpdateTranslationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NlpServiceMethodDescriptorSupplier("UpdateTranslation"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTranslationMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class NlpServiceGrpc {
         io.grpc.stub.StreamObserver<com.zenflash.grpc.ReviewResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitReviewMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void updateTranslation(com.zenflash.grpc.UpdateTranslationRequest request,
+        io.grpc.stub.StreamObserver<com.zenflash.grpc.UpdateTranslationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTranslationMethod(), responseObserver);
+    }
   }
 
   /**
@@ -182,6 +220,14 @@ public final class NlpServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitReviewMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updateTranslation(com.zenflash.grpc.UpdateTranslationRequest request,
+        io.grpc.stub.StreamObserver<com.zenflash.grpc.UpdateTranslationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTranslationMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -212,6 +258,13 @@ public final class NlpServiceGrpc {
     public com.zenflash.grpc.ReviewResponse submitReview(com.zenflash.grpc.ReviewRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitReviewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zenflash.grpc.UpdateTranslationResponse updateTranslation(com.zenflash.grpc.UpdateTranslationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTranslationMethod(), getCallOptions(), request);
     }
   }
 
@@ -246,10 +299,19 @@ public final class NlpServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitReviewMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zenflash.grpc.UpdateTranslationResponse> updateTranslation(
+        com.zenflash.grpc.UpdateTranslationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTranslationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ANALYZE_SENTENCE = 0;
   private static final int METHODID_SUBMIT_REVIEW = 1;
+  private static final int METHODID_UPDATE_TRANSLATION = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +337,10 @@ public final class NlpServiceGrpc {
         case METHODID_SUBMIT_REVIEW:
           serviceImpl.submitReview((com.zenflash.grpc.ReviewRequest) request,
               (io.grpc.stub.StreamObserver<com.zenflash.grpc.ReviewResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TRANSLATION:
+          serviceImpl.updateTranslation((com.zenflash.grpc.UpdateTranslationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zenflash.grpc.UpdateTranslationResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -308,6 +374,13 @@ public final class NlpServiceGrpc {
               com.zenflash.grpc.ReviewRequest,
               com.zenflash.grpc.ReviewResponse>(
                 service, METHODID_SUBMIT_REVIEW)))
+        .addMethod(
+          getUpdateTranslationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zenflash.grpc.UpdateTranslationRequest,
+              com.zenflash.grpc.UpdateTranslationResponse>(
+                service, METHODID_UPDATE_TRANSLATION)))
         .build();
   }
 
@@ -358,6 +431,7 @@ public final class NlpServiceGrpc {
               .setSchemaDescriptor(new NlpServiceFileDescriptorSupplier())
               .addMethod(getAnalyzeSentenceMethod())
               .addMethod(getSubmitReviewMethod())
+              .addMethod(getUpdateTranslationMethod())
               .build();
         }
       }

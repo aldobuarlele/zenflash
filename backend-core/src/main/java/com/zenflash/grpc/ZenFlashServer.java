@@ -76,4 +76,38 @@ public class ZenFlashServer extends NlpServiceGrpc.NlpServiceImplBase {
 
         log.info("Card {} scheduled for next review at {}", updatedCard.getId(), updatedCard.getNextReviewAt());
     }
+
+    @Override
+    public void updateTranslation(UpdateTranslationRequest request, StreamObserver<UpdateTranslationResponse> responseObserver) {
+        log.info("Menerima pembaruan terjemahan untuk kartu ID: {}", request.getCardId());
+
+        try {
+            java.util.UUID uuid = java.util.UUID.fromString(request.getCardId());
+
+            cardRepository.findById(uuid).ifPresentOrElse(card -> {
+                card.setBackText(request.getTranslatedText());
+                cardRepository.save(card);
+                log.info("Terjemahan berhasil diperbarui di database.");
+
+                responseObserver.onNext(UpdateTranslationResponse.newBuilder()
+                        .setSuccess(true)
+                        .setMessage("Translation updated successfully in PostgreSQL")
+                        .build());
+            }, () -> {
+                log.warn("Kartu dengan ID {} tidak ditemukan.", request.getCardId());
+                responseObserver.onNext(UpdateTranslationResponse.newBuilder()
+                        .setSuccess(false)
+                        .setMessage("Card ID not found")
+                        .build());
+            });
+        } catch (Exception e) {
+            log.error("Gagal update terjemahan: {}", e.getMessage());
+            responseObserver.onNext(UpdateTranslationResponse.newBuilder()
+                    .setSuccess(false)
+                    .setMessage("Error: " + e.getMessage())
+                    .build());
+        }
+
+        responseObserver.onCompleted();
+    }
 }

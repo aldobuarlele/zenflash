@@ -8,6 +8,7 @@ option java_package = "com.zenflash.grpc";
 service NlpService {
   rpc AnalyzeSentence (AnalyzeRequest) returns (AnalyzeResponse);
   rpc SubmitReview (ReviewRequest) returns (ReviewResponse);
+  rpc UpdateTranslation (UpdateTranslationRequest) returns (UpdateTranslationResponse);
 }
 
 message AnalyzeRequest {
@@ -33,5 +34,15 @@ message ReviewRequest {
 
 message ReviewResponse {
   string next_review_date = 1;
+  string message = 2;
+}
+
+message UpdateTranslationRequest {
+  string card_id = 1;
+  string translated_text = 2;
+}
+
+message UpdateTranslationResponse {
+  bool success = 1;
   string message = 2;
 }

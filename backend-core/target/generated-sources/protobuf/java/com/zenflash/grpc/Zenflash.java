@@ -40,6 +40,16 @@ public final class Zenflash {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_zenflash_ReviewResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_UpdateTranslationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_UpdateTranslationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_UpdateTranslationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_UpdateTranslationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -57,11 +67,17 @@ public final class Zenflash {
       "of_speech\030\004 \001(\t\"7\n\rReviewRequest\022\017\n\007card" +
       "_id\030\001 \001(\t\022\025\n\rquality_score\030\002 \001(\005\";\n\016Revi" +
       "ewResponse\022\030\n\020next_review_date\030\001 \001(\t\022\017\n\007" +
-      "message\030\002 \001(\t2\227\001\n\nNlpService\022F\n\017AnalyzeS" +
-      "entence\022\030.zenflash.AnalyzeRequest\032\031.zenf" +
-      "lash.AnalyzeResponse\022A\n\014SubmitReview\022\027.z" +
-      "enflash.ReviewRequest\032\030.zenflash.ReviewR" +
-      "esponseB\025\n\021com.zenflash.grpcP\001b\006proto3"
+      "message\030\002 \001(\t\"D\n\030UpdateTranslationReques" +
+      "t\022\017\n\007card_id\030\001 \001(\t\022\027\n\017translated_text\030\002 " +
+      "\001(\t\"=\n\031UpdateTranslationResponse\022\017\n\007succ" +
+      "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t2\365\001\n\nNlpServic" +
+      "e\022F\n\017AnalyzeSentence\022\030.zenflash.AnalyzeR" +
+      "equest\032\031.zenflash.AnalyzeResponse\022A\n\014Sub" +
+      "mitReview\022\027.zenflash.ReviewRequest\032\030.zen" +
+      "flash.ReviewResponse\022\\\n\021UpdateTranslatio" +
+      "n\022\".zenflash.UpdateTranslationRequest\032#." +
+      "zenflash.UpdateTranslationResponseB\025\n\021co" +
+      "m.zenflash.grpcP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -97,6 +113,18 @@ public final class Zenflash {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenflash_ReviewResponse_descriptor,
         new java.lang.String[] { "NextReviewDate", "Message", });
+    internal_static_zenflash_UpdateTranslationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_zenflash_UpdateTranslationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_UpdateTranslationRequest_descriptor,
+        new java.lang.String[] { "CardId", "TranslatedText", });
+    internal_static_zenflash_UpdateTranslationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_zenflash_UpdateTranslationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_UpdateTranslationResponse_descriptor,
+        new java.lang.String[] { "Success", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
