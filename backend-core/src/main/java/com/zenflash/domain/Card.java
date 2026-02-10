@@ -26,13 +26,16 @@ public class Card {
 
     private String reading;
 
+    @Builder.Default
     private Double easinessFactor = 2.5;
 
+    @Builder.Default
     private Integer intervalDays = 0;
 
+    @Builder.Default
     private Integer repetitions = 0;
 
     private ZonedDateTime nextReviewAt;
 
-    private ZonedDateTime createdAt = ZonedDateTime.now();
-}
+    @Builder.Default
+    private ZonedDateTime createdAt = ZonedDateTime.now();}
