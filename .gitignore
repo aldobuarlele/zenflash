@@ -1,0 +1,41 @@
+# --- IDEs & Editors ---
+.idea/
+*.iml
+.vscode/
+.project
+.settings/
+.classpath
+.DS_Store
+
+# --- Java / Maven (Backend-Core) ---
+**/target/
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+*.lst
+.mvn/
+mvnw
+mvnw.cmd
+
+# --- Python (Service-AI / CLI-Client) ---
+**/venv/
+**/env/
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+.pytest_cache/
+.python-version
+.env
+
+# --- gRPC / Proto Generated ---
+# Kami biasanya tidak men-commit file yang di-generate otomatis
+# karena bisa menyebabkan konflik antar OS saat kolaborasi.
+backend-core/target/generated-sources/
+service-ai/stubs/
+
+# --- Logs & Temp ---
+*.log
+logs/
+temp/
+tmp/
