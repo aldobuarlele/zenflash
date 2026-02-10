@@ -110,4 +110,38 @@ public class ZenFlashServer extends NlpServiceGrpc.NlpServiceImplBase {
 
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void getDueCards(GetDueCardsRequest request, StreamObserver<GetDueCardsResponse> responseObserver) {
+        log.info("Menarik daftar kartu yang jatuh tempo (Limit: {})", request.getLimit());
+
+        try {
+            ZonedDateTime now = ZonedDateTime.now();
+
+            List<Card> dueCards = cardRepository.findCardsToReview(now);
+
+            int limit = request.getLimit() > 0 ? request.getLimit() : dueCards.size();
+
+            GetDueCardsResponse.Builder responseBuilder = GetDueCardsResponse.newBuilder();
+
+            dueCards.stream()
+                    .limit(limit)
+                    .forEach(card -> {
+                        DueCard grpcDueCard = DueCard.newBuilder()
+                                .setCardId(card.getId().toString())
+                                .setFrontText(card.getFrontText())
+                                .setBackText(card.getBackText())
+                                .build();
+                        responseBuilder.addCards(grpcDueCard);
+                    });
+
+            responseObserver.onNext(responseBuilder.build());
+            log.info("Berhasil mengirim {} kartu ke antrean belajar.", responseBuilder.getCardsCount());
+
+        } catch (Exception e) {
+            log.error("Gagal menarik kartu jatuh tempo: {}", e.getMessage());
+        }
+
+        responseObserver.onCompleted();
+    }
 }

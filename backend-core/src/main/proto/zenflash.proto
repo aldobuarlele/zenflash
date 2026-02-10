@@ -9,6 +9,7 @@ service NlpService {
   rpc AnalyzeSentence (AnalyzeRequest) returns (AnalyzeResponse);
   rpc SubmitReview (ReviewRequest) returns (ReviewResponse);
   rpc UpdateTranslation (UpdateTranslationRequest) returns (UpdateTranslationResponse);
+  rpc GetDueCards (GetDueCardsRequest) returns (GetDueCardsResponse);
 }
 
 message AnalyzeRequest {
@@ -45,4 +46,18 @@ message UpdateTranslationRequest {
 message UpdateTranslationResponse {
   bool success = 1;
   string message = 2;
+}
+
+message GetDueCardsRequest {
+  int32 limit = 1;
+}
+
+message GetDueCardsResponse {
+  repeated DueCard cards = 1;
+}
+
+message DueCard {
+  string card_id = 1;
+  string front_text = 2;
+  string back_text = 3;
 }

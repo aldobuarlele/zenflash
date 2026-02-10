@@ -50,6 +50,21 @@ public final class Zenflash {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_zenflash_UpdateTranslationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_GetDueCardsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_GetDueCardsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_GetDueCardsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_GetDueCardsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenflash_DueCard_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenflash_DueCard_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -70,14 +85,20 @@ public final class Zenflash {
       "message\030\002 \001(\t\"D\n\030UpdateTranslationReques" +
       "t\022\017\n\007card_id\030\001 \001(\t\022\027\n\017translated_text\030\002 " +
       "\001(\t\"=\n\031UpdateTranslationResponse\022\017\n\007succ" +
-      "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t2\365\001\n\nNlpServic" +
-      "e\022F\n\017AnalyzeSentence\022\030.zenflash.AnalyzeR" +
-      "equest\032\031.zenflash.AnalyzeResponse\022A\n\014Sub" +
-      "mitReview\022\027.zenflash.ReviewRequest\032\030.zen" +
-      "flash.ReviewResponse\022\\\n\021UpdateTranslatio" +
-      "n\022\".zenflash.UpdateTranslationRequest\032#." +
-      "zenflash.UpdateTranslationResponseB\025\n\021co" +
-      "m.zenflash.grpcP\001b\006proto3"
+      "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"#\n\022GetDueCard" +
+      "sRequest\022\r\n\005limit\030\001 \001(\005\"7\n\023GetDueCardsRe" +
+      "sponse\022 \n\005cards\030\001 \003(\0132\021.zenflash.DueCard" +
+      "\"A\n\007DueCard\022\017\n\007card_id\030\001 \001(\t\022\022\n\nfront_te" +
+      "xt\030\002 \001(\t\022\021\n\tback_text\030\003 \001(\t2\301\002\n\nNlpServi" +
+      "ce\022F\n\017AnalyzeSentence\022\030.zenflash.Analyze" +
+      "Request\032\031.zenflash.AnalyzeResponse\022A\n\014Su" +
+      "bmitReview\022\027.zenflash.ReviewRequest\032\030.ze" +
+      "nflash.ReviewResponse\022\\\n\021UpdateTranslati" +
+      "on\022\".zenflash.UpdateTranslationRequest\032#" +
+      ".zenflash.UpdateTranslationResponse\022J\n\013G" +
+      "etDueCards\022\034.zenflash.GetDueCardsRequest" +
+      "\032\035.zenflash.GetDueCardsResponseB\025\n\021com.z" +
+      "enflash.grpcP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -125,6 +146,24 @@ public final class Zenflash {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenflash_UpdateTranslationResponse_descriptor,
         new java.lang.String[] { "Success", "Message", });
+    internal_static_zenflash_GetDueCardsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_zenflash_GetDueCardsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_GetDueCardsRequest_descriptor,
+        new java.lang.String[] { "Limit", });
+    internal_static_zenflash_GetDueCardsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_zenflash_GetDueCardsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_GetDueCardsResponse_descriptor,
+        new java.lang.String[] { "Cards", });
+    internal_static_zenflash_DueCard_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_zenflash_DueCard_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenflash_DueCard_descriptor,
+        new java.lang.String[] { "CardId", "FrontText", "BackText", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
