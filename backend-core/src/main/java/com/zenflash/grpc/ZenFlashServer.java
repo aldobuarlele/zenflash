@@ -144,4 +144,34 @@ public class ZenFlashServer extends NlpServiceGrpc.NlpServiceImplBase {
 
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void getPendingCards(GetPendingCardsRequest request, StreamObserver<GetPendingCardsResponse> responseObserver) {
+        log.info("AI Worker meminta daftar kartu 'Pending Translation' (Limit: {})", request.getLimit());
+
+        try {
+            List<Card> pendingEntities = cardRepository.findByBackText("Pending Translation");
+
+            GetPendingCardsResponse.Builder responseBuilder = GetPendingCardsResponse.newBuilder();
+
+            pendingEntities.stream()
+                    .limit(request.getLimit() > 0 ? request.getLimit() : 100)
+                    .forEach(card -> {
+                        PendingCard pc = PendingCard.newBuilder()
+                                .setCardId(card.getId().toString())
+                                .setTextToTranslate(card.getFrontText())
+                                .build();
+                        responseBuilder.addCards(pc);
+                    });
+
+            responseObserver.onNext(responseBuilder.build());
+            log.info("Mengirim {} kartu pending ke AI Worker.", responseBuilder.getCardsCount());
+
+        } catch (Exception e) {
+            log.error("Gagal mengambil kartu pending: {}", e.getMessage());
+        }
+
+        responseObserver.onCompleted();
+    }
+
 }

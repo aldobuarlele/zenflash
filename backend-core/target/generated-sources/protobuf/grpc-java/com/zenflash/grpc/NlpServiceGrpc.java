@@ -139,6 +139,37 @@ public final class NlpServiceGrpc {
     return getGetDueCardsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zenflash.grpc.GetPendingCardsRequest,
+      com.zenflash.grpc.GetPendingCardsResponse> getGetPendingCardsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPendingCards",
+      requestType = com.zenflash.grpc.GetPendingCardsRequest.class,
+      responseType = com.zenflash.grpc.GetPendingCardsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zenflash.grpc.GetPendingCardsRequest,
+      com.zenflash.grpc.GetPendingCardsResponse> getGetPendingCardsMethod() {
+    io.grpc.MethodDescriptor<com.zenflash.grpc.GetPendingCardsRequest, com.zenflash.grpc.GetPendingCardsResponse> getGetPendingCardsMethod;
+    if ((getGetPendingCardsMethod = NlpServiceGrpc.getGetPendingCardsMethod) == null) {
+      synchronized (NlpServiceGrpc.class) {
+        if ((getGetPendingCardsMethod = NlpServiceGrpc.getGetPendingCardsMethod) == null) {
+          NlpServiceGrpc.getGetPendingCardsMethod = getGetPendingCardsMethod =
+              io.grpc.MethodDescriptor.<com.zenflash.grpc.GetPendingCardsRequest, com.zenflash.grpc.GetPendingCardsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPendingCards"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zenflash.grpc.GetPendingCardsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zenflash.grpc.GetPendingCardsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new NlpServiceMethodDescriptorSupplier("GetPendingCards"))
+              .build();
+        }
+      }
+    }
+    return getGetPendingCardsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +245,13 @@ public final class NlpServiceGrpc {
         io.grpc.stub.StreamObserver<com.zenflash.grpc.GetDueCardsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDueCardsMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getPendingCards(com.zenflash.grpc.GetPendingCardsRequest request,
+        io.grpc.stub.StreamObserver<com.zenflash.grpc.GetPendingCardsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPendingCardsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -274,6 +312,14 @@ public final class NlpServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDueCardsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPendingCards(com.zenflash.grpc.GetPendingCardsRequest request,
+        io.grpc.stub.StreamObserver<com.zenflash.grpc.GetPendingCardsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPendingCardsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -318,6 +364,13 @@ public final class NlpServiceGrpc {
     public com.zenflash.grpc.GetDueCardsResponse getDueCards(com.zenflash.grpc.GetDueCardsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDueCardsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zenflash.grpc.GetPendingCardsResponse getPendingCards(com.zenflash.grpc.GetPendingCardsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPendingCardsMethod(), getCallOptions(), request);
     }
   }
 
@@ -368,12 +421,21 @@ public final class NlpServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDueCardsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zenflash.grpc.GetPendingCardsResponse> getPendingCards(
+        com.zenflash.grpc.GetPendingCardsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPendingCardsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ANALYZE_SENTENCE = 0;
   private static final int METHODID_SUBMIT_REVIEW = 1;
   private static final int METHODID_UPDATE_TRANSLATION = 2;
   private static final int METHODID_GET_DUE_CARDS = 3;
+  private static final int METHODID_GET_PENDING_CARDS = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -407,6 +469,10 @@ public final class NlpServiceGrpc {
         case METHODID_GET_DUE_CARDS:
           serviceImpl.getDueCards((com.zenflash.grpc.GetDueCardsRequest) request,
               (io.grpc.stub.StreamObserver<com.zenflash.grpc.GetDueCardsResponse>) responseObserver);
+          break;
+        case METHODID_GET_PENDING_CARDS:
+          serviceImpl.getPendingCards((com.zenflash.grpc.GetPendingCardsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zenflash.grpc.GetPendingCardsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -454,6 +520,13 @@ public final class NlpServiceGrpc {
               com.zenflash.grpc.GetDueCardsRequest,
               com.zenflash.grpc.GetDueCardsResponse>(
                 service, METHODID_GET_DUE_CARDS)))
+        .addMethod(
+          getGetPendingCardsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zenflash.grpc.GetPendingCardsRequest,
+              com.zenflash.grpc.GetPendingCardsResponse>(
+                service, METHODID_GET_PENDING_CARDS)))
         .build();
   }
 
@@ -506,6 +579,7 @@ public final class NlpServiceGrpc {
               .addMethod(getSubmitReviewMethod())
               .addMethod(getUpdateTranslationMethod())
               .addMethod(getGetDueCardsMethod())
+              .addMethod(getGetPendingCardsMethod())
               .build();
         }
       }

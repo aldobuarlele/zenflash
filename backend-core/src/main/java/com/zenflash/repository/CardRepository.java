@@ -16,4 +16,6 @@ public interface CardRepository extends JpaRepository<Card, UUID> {
 
     @Query("SELECT c FROM Card c WHERE c.nextReviewAt <= :now ORDER BY c.nextReviewAt ASC")
     List<Card> findCardsToReview(@Param("now") ZonedDateTime now);
+
+    List<Card> findByBackText(String backText);
 }

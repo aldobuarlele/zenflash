@@ -10,6 +10,7 @@ service NlpService {
   rpc SubmitReview (ReviewRequest) returns (ReviewResponse);
   rpc UpdateTranslation (UpdateTranslationRequest) returns (UpdateTranslationResponse);
   rpc GetDueCards (GetDueCardsRequest) returns (GetDueCardsResponse);
+  rpc GetPendingCards (GetPendingCardsRequest) returns (GetPendingCardsResponse);
 }
 
 message AnalyzeRequest {
@@ -60,4 +61,17 @@ message DueCard {
   string card_id = 1;
   string front_text = 2;
   string back_text = 3;
+}
+
+message GetPendingCardsRequest {
+  int32 limit = 1;
+}
+
+message GetPendingCardsResponse {
+  repeated PendingCard cards = 1;
+}
+
+message PendingCard {
+  string card_id = 1;
+  string text_to_translate = 2;
 }
