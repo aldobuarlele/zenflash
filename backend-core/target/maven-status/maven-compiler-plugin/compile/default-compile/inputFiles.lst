@@ -1,5 +1,6 @@
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/repository/CardRepository.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/ReviewRequest.java
+/Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/dto/GameResultDTO.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/AnalyzeResponse.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/grpc-java/com/zenflash/grpc/NlpServiceGrpc.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/GetDueCardsRequestOrBuilder.java
@@ -7,6 +8,7 @@
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/UpdateTranslationRequest.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/AnalyzeRequest.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/UpdateTranslationRequestOrBuilder.java
+/Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/dto/GameQuestionDTO.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/ZenFlashApplication.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/UpdateTranslationResponseOrBuilder.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/DueCard.java
@@ -17,6 +19,7 @@
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/Token.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/GetPendingCardsRequest.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/GetDueCardsRequest.java
+/Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/service/GameService.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/GetPendingCardsResponse.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/TokenOrBuilder.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/Zenflash.java
@@ -31,3 +34,5 @@
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/ReviewResponse.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/domain/Card.java
 /Users/aldobuarlele/Documents/Project/zenflash/backend-core/target/generated-sources/protobuf/java/com/zenflash/grpc/UpdateTranslationResponse.java
+/Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/domain/UserStats.java
+/Users/aldobuarlele/Documents/Project/zenflash/backend-core/src/main/java/com/zenflash/repository/UserStatsRepository.java

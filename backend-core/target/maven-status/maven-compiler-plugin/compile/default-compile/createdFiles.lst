@@ -4,7 +4,9 @@ com/zenflash/grpc/UpdateTranslationResponseOrBuilder.class
 com/zenflash/grpc/Token$Builder.class
 com/zenflash/grpc/GetDueCardsRequest$1.class
 com/zenflash/grpc/NlpServiceGrpc$AsyncService.class
+com/zenflash/service/GameService.class
 com/zenflash/domain/Card$CardBuilder.class
+com/zenflash/domain/UserStats.class
 com/zenflash/grpc/NlpServiceGrpc$3.class
 com/zenflash/grpc/ReviewRequest$1.class
 com/zenflash/grpc/ReviewRequestOrBuilder.class
@@ -28,8 +30,10 @@ com/zenflash/grpc/AnalyzeRequest$1.class
 com/zenflash/grpc/GetPendingCardsResponse$Builder.class
 com/zenflash/grpc/GetDueCardsRequest$Builder.class
 com/zenflash/grpc/GetPendingCardsRequest$Builder.class
+com/zenflash/repository/UserStatsRepository.class
 com/zenflash/grpc/NlpServiceGrpc$2.class
 com/zenflash/grpc/PendingCard$1.class
+com/zenflash/dto/GameResultDTO.class
 com/zenflash/grpc/UpdateTranslationRequest$Builder.class
 com/zenflash/grpc/Zenflash.class
 com/zenflash/grpc/GetDueCardsResponseOrBuilder.class
@@ -48,6 +52,7 @@ com/zenflash/grpc/UpdateTranslationResponse$Builder.class
 com/zenflash/grpc/PendingCardOrBuilder.class
 com/zenflash/domain/Card.class
 com/zenflash/grpc/NlpServiceGrpc$NlpServiceFileDescriptorSupplier.class
+com/zenflash/dto/GameQuestionDTO.class
 com/zenflash/grpc/AnalyzeResponse$1.class
 com/zenflash/grpc/Token$1.class
 com/zenflash/grpc/Token.class
@@ -57,6 +62,9 @@ com/zenflash/grpc/ReviewResponse$Builder.class
 com/zenflash/grpc/GetPendingCardsResponse$1.class
 com/zenflash/grpc/NlpServiceGrpc$NlpServiceFutureStub.class
 com/zenflash/grpc/DueCard$Builder.class
+com/zenflash/dto/GameResultDTO$GameResultDTOBuilder.class
+com/zenflash/domain/UserStats$UserStatsBuilder.class
+com/zenflash/dto/GameQuestionDTO$GameQuestionDTOBuilder.class
 com/zenflash/grpc/GetDueCardsResponse.class
 com/zenflash/grpc/AnalyzeResponse$Builder.class
 com/zenflash/grpc/NlpServiceGrpc$NlpServiceStub.class
