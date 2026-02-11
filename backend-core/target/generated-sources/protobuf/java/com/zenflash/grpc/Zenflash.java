@@ -97,8 +97,9 @@ public final class Zenflash {
       "of_speech\030\004 \001(\t\"7\n\rReviewRequest\022\017\n\007card" +
       "_id\030\001 \001(\t\022\025\n\rquality_score\030\002 \001(\005\";\n\016Revi" +
       "ewResponse\022\030\n\020next_review_date\030\001 \001(\t\022\017\n\007" +
-      "message\030\002 \001(\t\"D\n\030UpdateTranslationReques" +
+      "message\030\002 \001(\t\"l\n\030UpdateTranslationReques" +
       "t\022\017\n\007card_id\030\001 \001(\t\022\027\n\017translated_text\030\002 " +
+      "\001(\t\022\022\n\nexample_ja\030\003 \001(\t\022\022\n\nexample_id\030\004 " +
       "\001(\t\"=\n\031UpdateTranslationResponse\022\017\n\007succ" +
       "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"#\n\022GetDueCard" +
       "sRequest\022\r\n\005limit\030\001 \001(\005\"7\n\023GetDueCardsRe" +
@@ -160,7 +161,7 @@ public final class Zenflash {
     internal_static_zenflash_UpdateTranslationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenflash_UpdateTranslationRequest_descriptor,
-        new java.lang.String[] { "CardId", "TranslatedText", });
+        new java.lang.String[] { "CardId", "TranslatedText", "ExampleJa", "ExampleId", });
     internal_static_zenflash_UpdateTranslationResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_zenflash_UpdateTranslationResponse_fieldAccessorTable = new

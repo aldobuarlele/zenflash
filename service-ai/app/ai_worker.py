@@ -14,7 +14,7 @@ def run_ai_worker():
     with grpc.insecure_channel('localhost:9090') as channel:
         stub = zenflash_pb2_grpc.NlpServiceStub(channel)
         
-        print("\n--- 🤖 ZenFlash AI Worker Started ---")
+        print("\n--- 🤖 ZenFlash AI Worker (Full Mode) Started ---")
         
         try:
             print("[Worker] Mencari kartu dengan status 'Pending Translation'...")
@@ -22,30 +22,34 @@ def run_ai_worker():
             response = stub.GetPendingCards(request)
             
             if not response.cards:
-                print("[Worker] Tidak ada kartu yang perlu diproses. Pekerjaan selesai! 😎")
+                print("[Worker] Tidak ada kartu yang perlu diproses. 😎")
                 return
 
-            print(f"[Worker] Menemukan {len(response.cards)} kartu. Memulai proses terjemahan...")
+            print(f"[Worker] Memproses {len(response.cards)} kartu...")
 
             for card in response.cards:
                 print(f"\n[ID] {card.card_id}")
-                print(f"[Jepang] {card.text_to_translate}")
                 
                 translation = translator.translate(card.text_to_translate)
+                
+                ex_ja, ex_id = translator.generate_example(card.text_to_translate)
                 
                 if translation:
                     update_request = zenflash_pb2.UpdateTranslationRequest(
                         card_id=card.card_id,
-                        translated_text=translation
+                        translated_text=translation,
+                        example_ja=ex_ja if ex_ja else "",
+                        example_id=ex_id if ex_id else ""
                     )
                     update_response = stub.UpdateTranslation(update_request)
                     
                     if update_response.success:
-                        print(f"✅ Berhasil diterjemahkan: {translation}")
+                        print(f"✅ Database Updated: {translation}")
+                        print(f"📝 Contoh: {ex_ja} ({ex_id})")
                     else:
                         print(f"❌ Gagal update DB: {update_response.message}")
                 else:
-                    print("❌ Gagal mendapatkan terjemahan dari AI.")
+                    print("❌ Gagal mendapatkan data dari AI.")
 
             print("\n--- 🤖 Worker Selesai Memproses Batch ---")
 

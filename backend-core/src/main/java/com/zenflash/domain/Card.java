@@ -26,6 +26,12 @@ public class Card {
 
     private String reading;
 
+    @Column(columnDefinition = "TEXT")
+    private String exampleJa;
+
+    @Column(columnDefinition = "TEXT")
+    private String exampleId;
+
     @Builder.Default
     private Double easinessFactor = 2.5;
 
@@ -38,4 +44,5 @@ public class Card {
     private ZonedDateTime nextReviewAt;
 
     @Builder.Default
-    private ZonedDateTime createdAt = ZonedDateTime.now();}
+    private ZonedDateTime createdAt = ZonedDateTime.now();
+}

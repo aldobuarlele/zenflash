@@ -79,35 +79,41 @@ public class ZenFlashServer extends NlpServiceGrpc.NlpServiceImplBase {
 
     @Override
     public void updateTranslation(UpdateTranslationRequest request, StreamObserver<UpdateTranslationResponse> responseObserver) {
-        log.info("Menerima pembaruan terjemahan untuk kartu ID: {}", request.getCardId());
+        log.info("Updating translation and examples for Card ID: {}", request.getCardId());
 
         try {
-            java.util.UUID uuid = java.util.UUID.fromString(request.getCardId());
+            UUID uuid = UUID.fromString(request.getCardId());
 
             cardRepository.findById(uuid).ifPresentOrElse(card -> {
                 card.setBackText(request.getTranslatedText());
+
+                if (request.getExampleJa() != null && !request.getExampleJa().isEmpty()) {
+                    card.setExampleJa(request.getExampleJa());
+                }
+                if (request.getExampleId() != null && !request.getExampleId().isEmpty()) {
+                    card.setExampleId(request.getExampleId());
+                }
+
                 cardRepository.save(card);
-                log.info("Terjemahan berhasil diperbarui di database.");
+                log.info("Database updated successfully with examples.");
 
                 responseObserver.onNext(UpdateTranslationResponse.newBuilder()
                         .setSuccess(true)
-                        .setMessage("Translation updated successfully in PostgreSQL")
+                        .setMessage("Translation and examples updated successfully")
                         .build());
             }, () -> {
-                log.warn("Kartu dengan ID {} tidak ditemukan.", request.getCardId());
                 responseObserver.onNext(UpdateTranslationResponse.newBuilder()
                         .setSuccess(false)
                         .setMessage("Card ID not found")
                         .build());
             });
         } catch (Exception e) {
-            log.error("Gagal update terjemahan: {}", e.getMessage());
+            log.error("Failed to update card: {}", e.getMessage());
             responseObserver.onNext(UpdateTranslationResponse.newBuilder()
                     .setSuccess(false)
                     .setMessage("Error: " + e.getMessage())
                     .build());
         }
-
         responseObserver.onCompleted();
     }
 

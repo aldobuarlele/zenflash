@@ -42,6 +42,8 @@ message ReviewResponse {
 message UpdateTranslationRequest {
   string card_id = 1;
   string translated_text = 2;
+  string example_ja = 3;
+  string example_id = 4;
 }
 
 message UpdateTranslationResponse {
