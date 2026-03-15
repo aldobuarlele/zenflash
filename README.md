@@ -16,16 +16,16 @@
 
 ## 🛠️ Tech Stack
 
+### **AI Service (The Specialist)**
+* **Python 3.10**: Menjalankan *background worker* dan pemrosesan bahasa alami.
+* **CustomTkinter**: Prototipe GUI untuk pengujian logika permainan secara lokal.
+* **Miniconda**: Manajemen *environment* untuk isolasi dependensi AI.
+
 ### **Backend (The Core)**
 * **Java 17 & Spring Boot 3**: Menangani logika bisnis, manajemen database, dan REST API.
 * **PostgreSQL**: Penyimpanan data utama untuk kartu, statistik user, dan progres SRS.
 * **gRPC**: Protokol komunikasi *server-to-server* dengan Python Service.
 * **Lombok & JPA/Hibernate**: Untuk efisiensi pengembangan *boilerplate* code.
-
-### **AI Service (The Specialist)**
-* **Python 3.10**: Menjalankan *background worker* dan pemrosesan bahasa alami.
-* **CustomTkinter**: Prototipe GUI untuk pengujian logika permainan secara lokal.
-* **Miniconda**: Manajemen *environment* untuk isolasi dependensi AI.
 
 ---
 
