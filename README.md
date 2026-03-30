@@ -4,17 +4,6 @@
 
 ---
 
-## 🚀 Fitur Utama
-
-* **Hybrid Microservices Architecture**: Komunikasi antar-layanan menggunakan **gRPC** untuk latensi rendah dan *type-safety* menggunakan Protocol Buffers.
-* **AI-Powered Content**: Python Worker secara otomatis menerjemahkan kartu dan men-generate kalimat contoh yang natural menggunakan LLM.
-* **Gamified Learning Logic**: Sistem "Survival Quest" dengan perhitungan skor dinamis berbasis waktu dan *combo*.
-* **Advanced SRS Algorithm**: Implementasi algoritma **SM-2** yang dimodifikasi untuk mengoptimalkan retensi memori jangka panjang.
-* **Cross-Platform Interface**: Tersedia dalam versi GUI Python (CustomTkinter) dan sedang dalam pengembangan versi Web (React + Vite).
-
-
----
-
 ## 🛠️ Tech Stack
 
 ### **AI Service (The Specialist)**
@@ -28,6 +17,15 @@
 * **gRPC**: Protokol komunikasi *server-to-server* dengan Python Service.
 * **Lombok & JPA/Hibernate**: Untuk efisiensi pengembangan *boilerplate* code.
 
+---
+
+## 🚀 Fitur Utama
+
+* **Hybrid Microservices Architecture**: Komunikasi antar-layanan menggunakan **gRPC** untuk latensi rendah dan *type-safety* menggunakan Protocol Buffers.
+* **AI-Powered Content**: Python Worker secara otomatis menerjemahkan kartu dan men-generate kalimat contoh yang natural menggunakan LLM.
+* **Gamified Learning Logic**: Sistem "Survival Quest" dengan perhitungan skor dinamis berbasis waktu dan *combo*.
+* **Advanced SRS Algorithm**: Implementasi algoritma **SM-2** yang dimodifikasi untuk mengoptimalkan retensi memori jangka panjang.
+* **Cross-Platform Interface**: Tersedia dalam versi GUI Python (CustomTkinter) dan sedang dalam pengembangan versi Web (React + Vite).
 
 ---
 
