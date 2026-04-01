@@ -1,6 +1,15 @@
 # 🎌 ZenFlash: Survival Daily Quest
 
 **ZenFlash** adalah platform pembelajaran bahasa Jepang berbasis **Spaced Repetition System (SRS)** yang menggabungkan performa tinggi *backend* Java dengan fleksibilitas AI Python melalui **gRPC**. Proyek ini dirancang untuk mensimulasikan tantangan bertahan hidup (*survival*) di Jepang melalui konten yang dihasilkan secara dinamis oleh AI untuk membantu pengguna menguasai kosakata harian secara fungsional.
+---
+
+## 🚀 Fitur Utama
+
+* **Hybrid Microservices Architecture**: Komunikasi antar-layanan menggunakan **gRPC** untuk latensi rendah dan *type-safety* menggunakan Protocol Buffers.
+* **AI-Powered Content**: Python Worker secara otomatis menerjemahkan kartu dan men-generate kalimat contoh yang natural menggunakan LLM.
+* **Gamified Learning Logic**: Sistem "Survival Quest" dengan perhitungan skor dinamis berbasis waktu dan *combo*.
+* **Advanced SRS Algorithm**: Implementasi algoritma **SM-2** yang dimodifikasi untuk mengoptimalkan retensi memori jangka panjang.
+* **Cross-Platform Interface**: Tersedia dalam versi GUI Python (CustomTkinter) dan sedang dalam pengembangan versi Web (React + Vite).
 
 ---
 
@@ -16,16 +25,7 @@
 * **PostgreSQL**: Penyimpanan data utama untuk kartu, statistik user, dan progres SRS.
 * **gRPC**: Protokol komunikasi *server-to-server* dengan Python Service.
 * **Lombok & JPA/Hibernate**: Untuk efisiensi pengembangan *boilerplate* code.
-
----
-
-## 🚀 Fitur Utama
-
-* **Hybrid Microservices Architecture**: Komunikasi antar-layanan menggunakan **gRPC** untuk latensi rendah dan *type-safety* menggunakan Protocol Buffers.
-* **AI-Powered Content**: Python Worker secara otomatis menerjemahkan kartu dan men-generate kalimat contoh yang natural menggunakan LLM.
-* **Gamified Learning Logic**: Sistem "Survival Quest" dengan perhitungan skor dinamis berbasis waktu dan *combo*.
-* **Advanced SRS Algorithm**: Implementasi algoritma **SM-2** yang dimodifikasi untuk mengoptimalkan retensi memori jangka panjang.
-* **Cross-Platform Interface**: Tersedia dalam versi GUI Python (CustomTkinter) dan sedang dalam pengembangan versi Web (React + Vite).
+* 
 
 ---
 
