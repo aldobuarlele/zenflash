@@ -1,7 +1,5 @@
 # 🎌 ZenFlash: Survival Daily Quest
 
-**ZenFlash** adalah platform pembelajaran bahasa Jepang berbasis **Spaced Repetition System (SRS)** yang menggabungkan performa tinggi *backend* Java dengan fleksibilitas AI Python melalui **gRPC**. Proyek ini dirancang untuk mensimulasikan tantangan bertahan hidup (*survival*) di Jepang melalui konten yang dihasilkan secara dinamis oleh AI untuk membantu pengguna menguasai kosakata harian secara fungsional.
----
 
 ## 🚀 Fitur Utama
 
@@ -11,6 +9,9 @@
 * **Advanced SRS Algorithm**: Implementasi algoritma **SM-2** yang dimodifikasi untuk mengoptimalkan retensi memori jangka panjang.
 * **Cross-Platform Interface**: Tersedia dalam versi GUI Python (CustomTkinter) dan sedang dalam pengembangan versi Web (React + Vite).
 
+---
+
+**ZenFlash** adalah platform pembelajaran bahasa Jepang berbasis **Spaced Repetition System (SRS)** yang menggabungkan performa tinggi *backend* Java dengan fleksibilitas AI Python melalui **gRPC**. Proyek ini dirancang untuk mensimulasikan tantangan bertahan hidup (*survival*) di Jepang melalui konten yang dihasilkan secara dinamis oleh AI untuk membantu pengguna menguasai kosakata harian secara fungsional.
 ---
 
 ## 🛠️ Tech Stack
