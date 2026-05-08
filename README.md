@@ -2,7 +2,8 @@
 
 
 
-**ZenFlash** adalah platform pembelajaran bahasa Jepang berbasis **Spaced Repetition System (SRS)** yang menggabungkan performa tinggi *backend* Java dengan fleksibilitas AI Python melalui **gRPC**. Proyek ini dirancang untuk mensimulasikan tantangan bertahan hidup (*survival*) di Jepang melalui konten yang dihasilkan secara dinamis oleh AI untuk membantu pengguna menguasai kosakata harian secara fungsional.
+**ZenFlash** 
+adalah platform pembelajaran bahasa Jepang berbasis **Spaced Repetition System (SRS)** yang menggabungkan performa tinggi *backend* Java dengan fleksibilitas AI Python melalui **gRPC**. Proyek ini dirancang untuk mensimulasikan tantangan bertahan hidup (*survival*) di Jepang melalui konten yang dihasilkan secara dinamis oleh AI untuk membantu pengguna menguasai kosakata harian secara fungsional.
 ---
 
 ## 🚀 Fitur Utama
